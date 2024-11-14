@@ -1,4 +1,4 @@
-namespace DDDWebAPI.Domain.Models;
+namespace Domain.Models;
 public class Produto : Base
 {
     public string Nome { get; set; }
