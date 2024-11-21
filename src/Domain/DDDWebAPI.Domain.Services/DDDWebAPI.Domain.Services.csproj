@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DDDWebAPI.Domain.Core\DDDWebAPI.Domain.Core.csproj" />
+  </ItemGroup>
+
 </Project>

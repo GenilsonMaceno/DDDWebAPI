@@ -11,7 +11,7 @@ namespace DDDWebAPI.Domain.Services.Services
 {
     public class ServiceCliente : ServiceBase<Cliente>, IServiceCliente
     {
-        public readonly IRepositoryCliente _repositoryCliente;
+        private readonly IRepositoryCliente _repositoryCliente;
 
         public ServiceCliente(IRepositoryCliente repositoryCliente) : base(repositoryCliente)
         {
