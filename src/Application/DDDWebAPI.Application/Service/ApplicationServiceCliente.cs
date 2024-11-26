@@ -1,51 +1,55 @@
 ﻿using DDDWebAPI.Application.DTO.DTO;
 using DDDWebAPI.Application.Interfaces;
 using DDDWebAPI.Domain.Core.Interfaces.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DDDWebAPI.Infrastruture.CrossCutting.Adapter.Interfaces;
 
 namespace DDDWebAPI.Application.Service
 {
-    public class ApplicationServiceCliente : IDisposable, IApplicationServiceProduto
+    public class ApplicationServiceCliente : IDisposable, IApplicationServiceCliente
     {
         private readonly IServiceCliente _serviceCliente;
+        private readonly IMapperCliente _mapperCliente;
 
-        public ApplicationServiceCliente(IServiceCliente serviceCliente)
+        public ApplicationServiceCliente(IServiceCliente serviceCliente, IMapperCliente mapperCliente)
         {
             _serviceCliente = serviceCliente;
+            _mapperCliente = mapperCliente;
         }
 
-        public void Add(ProdutoDTO obj)
+
+        public void Add(ClienteDTO obj)
         {
-            throw new NotImplementedException();
+            var objCliente = _mapperCliente.MapperToEntity(obj);
+            _serviceCliente.add(objCliente);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _serviceCliente.Dispose();
         }
 
-        public IEnumerable<ProdutoDTO> GetAll()
+        public IEnumerable<ClienteDTO> GetAll()
         {
-            throw new NotImplementedException();
+            var objCliente = _serviceCliente.GetAll();
+            return _mapperCliente.MapperListClientes(objCliente);
         }
 
-        public ProdutoDTO GetById(int id)
+        public ClienteDTO GetById(int id)
         {
-            throw new NotImplementedException();
+            var objcliente = _serviceCliente.GetById(id);
+            return _mapperCliente.MapperToDTO(objcliente);
         }
 
-        public void Remove(ProdutoDTO obj)
+        public void Remove(ClienteDTO obj)
         {
-            throw new NotImplementedException();
+            var objCliente = _mapperCliente.MapperToEntity(obj);
+            _serviceCliente.Remove(objCliente);
         }
 
-        public void Update(ProdutoDTO obj)
+        public void Update(ClienteDTO obj)
         {
-            throw new NotImplementedException();
+            var objCliente = _mapperCliente.MapperToEntity(obj);
+            _serviceCliente.Update(objCliente);
         }
     }
 }

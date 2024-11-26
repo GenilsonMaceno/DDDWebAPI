@@ -10,8 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\DDDWebAPI.Application.DTO\DDDWebAPI.Application.DTO.csproj" />
+    <ProjectReference Include="..\..\Application\DDDWebAPI.Application\DDDWebAPI.Application.csproj" />
+    <ProjectReference Include="..\..\CrossCutting\DDDWebAPI.Infrastruture.CrossCutting.IOC\DDDWebAPI.Infrastruture.CrossCutting.IOC.csproj" />
   </ItemGroup>
 
 </Project>
