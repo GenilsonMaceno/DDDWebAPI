@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\DDDWebAPI.Application\DDDWebAPI.Application.csproj" />
+    <ProjectReference Include="..\..\Domain\DDDWebAPI.Domain.Services\DDDWebAPI.Domain.Services.csproj" />
+    <ProjectReference Include="..\..\Infrastruture\DDDWebAPI.Infrastruture.Repository\DDDWebAPI.Infrastruture.Repository.csproj" />
+    <ProjectReference Include="..\DDDWebAPI.Infrastruture.CrossCutting.Adapter\DDDWebAPI.Infrastruture.CrossCutting.Adapter.csproj" />
+  </ItemGroup>
+
 </Project>
