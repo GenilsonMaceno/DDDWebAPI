@@ -1,7 +1,7 @@
 ﻿using DDDWebAPI.Application.DTO.DTO;
 using DDDWebAPI.Domain.Models;
 
-namespace DDDWebAPI.Infrastruture.CrossCutting.Adapter.Map
+namespace DDDWebAPI.Infrastruture.CrossCutting.Adapter.Interfaces
 {
     public interface IMapperCliente
     {

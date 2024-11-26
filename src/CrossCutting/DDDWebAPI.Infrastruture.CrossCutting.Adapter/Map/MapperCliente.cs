@@ -44,13 +44,13 @@ namespace DDDWebAPI.Infrastruture.CrossCutting.Adapter.Map
         {
             ClienteDTO clienteDTO = new ClienteDTO
             {
-                Id = Cliente.Id
+                Id = cliente.Id
                ,
-                Nome = Cliente.Nome
+                Nome = cliente.Nome
                ,
-                Sobrenome = Cliente.Sobrenome
+                Sobrenome = cliente.Sobrenome
                ,
-                Email = Cliente.Email
+                Email = cliente.Email
             };
 
             return clienteDTO;
