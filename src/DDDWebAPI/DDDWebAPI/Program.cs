@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 var containerBuilder = new ContainerBuilder();
 containerBuilder.RegisterModule(new ModuleIOC());
 
+
 var connectionString =
     builder.Configuration.GetConnectionString("DefaultConnection")
         ?? throw new InvalidOperationException("Connection string"
@@ -17,6 +18,7 @@ var connectionString =
 
 builder.Services.AddDbContext<SQLContext>(options =>
     options.UseSqlServer(connectionString));
+
 
 
 builder.Services.AddControllers();
